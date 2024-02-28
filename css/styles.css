@@ -4,3 +4,10 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
+
+body {
+  min-height: 100vh;
+  background-color: #090c31;
+  display: grid;
+  place-items: center;
+}
