@@ -2,6 +2,7 @@ const screen = document.querySelector('.screen');
 const buttons = document.querySelectorAll('.btn')
 
 const errorMsg = 'Error!'
+const operators = ['*', '/', '+', '-']
 
 buttons.forEach(button => {
   button.addEventListener('click', () => {
@@ -34,11 +35,25 @@ buttons.forEach(button => {
     }
 
     if (pressedButton === '.') {
-      if (screen.textContent.includes('.')) return
+      const lastChar = screen.textContent[screen.textContent.length - 1]
+      if (lastChar === pressedButton) return
+    }
+
+    if (operators.includes(pressedButton)) {
+      const lastChar = screen.textContent[screen.textContent.length - 1]
+
+      if (operators.includes(lastChar)) {
+        let currentValue = screen.textContent.split('')
+        currentValue.pop()
+        currentValue.push(pressedButton)
+        currentValue = currentValue.join('')
+        screen.textContent = currentValue
+        return
+      }
     }
 
     if (screen.textContent === '0' || screen.textContent.includes(errorMsg)) {
-      if (pressedButton === '/' || pressedButton === '*' || pressedButton === '-' || pressedButton === '+') {
+      if (operators.includes(pressedButton)) {
         screen.textContent = '0' + pressedButton
       } else {
         screen.textContent = pressedButton
