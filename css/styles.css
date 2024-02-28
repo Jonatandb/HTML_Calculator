@@ -36,3 +36,31 @@ body {
   font-weight: 600;
 }
 
+.btn {
+  background-color: #15173c;
+  color: white;
+  border: 0;
+  padding: 1.5rem .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: .5rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #090c31;
+}
+
+#zero {
+  grid-column: span 2;
+}
+
+#equal {
+  grid-row: span 2;
+  background-color: #e6394a;
+}
+
+#equal:hover {
+  background-color: #e65766;
+}
