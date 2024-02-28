@@ -11,3 +11,15 @@ body {
   display: grid;
   place-items: center;
 }
+
+.calculator {
+  background-color: #15173c;
+  color: white;
+  width: 350px;
+  max-width: 100%;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
